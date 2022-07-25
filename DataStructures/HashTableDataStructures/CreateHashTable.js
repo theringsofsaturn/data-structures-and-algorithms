@@ -134,3 +134,19 @@ myHashTable.set("grapes", 10000);
 myHashTable.get("grapes");
 myHashTable.set("apples", 9);
 myHashTable.get("apples");
+myHashTable.keys();
+
+// Hash Tables VS Arrays
+
+// Arrays Big O Notation
+// Search - O(n)
+// Insert - O(n)
+// Delete - O(n)
+// Push - - O(1)
+// Lookup - O(1)
+
+// Hash Tables Big O Notation
+// Search - O(1)
+// Insert - O(1)
+// Delete - O(1)
+// Lookup - O(1)
