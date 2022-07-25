@@ -122,10 +122,10 @@ class LinkedList {
 }
 
 const myLinkedList = new LinkedList(10);
-// console.log(myLinkedList.append(5));
-// console.log(myLinkedList.append(15));
-// console.log(myLinkedList.prepend(20));
-// console.log(myLinkedList.insert(2, 30));
-// console.log(myLinkedList.remove(2));
-// console.log(myLinkedList.printList());
-console.log(myLinkedList.reverse());
+console.log(myLinkedList.append(5));
+console.log(myLinkedList.append(15));
+console.log(myLinkedList.prepend(20));
+console.log(myLinkedList.insert(2, 30));
+console.log(myLinkedList.remove(2));
+// console.log(myLinkedList.reverse());
+console.log(myLinkedList.printList());
