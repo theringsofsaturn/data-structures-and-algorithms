@@ -1,4 +1,4 @@
-// Google Question
+//? Google Question
 // Given an array = [2,5,1,2,3,5,1,2,4]
 // It should return 2
 
@@ -12,7 +12,7 @@ let arr1 = [2, 5, 1, 2, 3, 5, 1, 2, 4];
 let arr2 = [2, 1, 1, 2, 3, 5, 1, 2, 4];
 let arr3 = [2, 3, 4, 5];
 
-// Nested loop solution
+// Nested loop solution (not the best for Big O complexities. I will improve it below with Hash Tables data structures, with a Map algorithm)
 function firstRecurringCharacter(input) {
   for (let i = 0; i < input.length; i++) {
     for (let j = i + 1; j < input.length; j++) {
