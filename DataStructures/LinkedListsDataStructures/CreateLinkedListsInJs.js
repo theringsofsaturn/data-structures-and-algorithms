@@ -54,9 +54,19 @@ class LinkedList {
     this.length++;
     return this;
   }
+  printList() {
+    const array = [];
+    let currentNode = this.head;
+    while (currentNode !== null) {
+      array.push(currentNode.value);
+      currentNode = currentNode.next;
+    }
+    return array;
+  }
 }
 
 const myLinkedList = new LinkedList(10);
 console.log(myLinkedList.append(5));
 console.log(myLinkedList.append(15));
 console.log(myLinkedList.prepend(20));
+console.log(myLinkedList.printList());
