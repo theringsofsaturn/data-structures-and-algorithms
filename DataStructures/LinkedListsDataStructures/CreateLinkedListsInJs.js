@@ -15,6 +15,13 @@
 //   },
 // };
 
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
 // Class LinkedList
 class LinkedList {
   constructor(value) {
@@ -30,12 +37,15 @@ class LinkedList {
       value: value,
       next: null,
     };
+    // We can use the above or instantiate a new node from the class Node like:
+    // const newNode = new Node(value);
     this.tail.next = newNode;
     this.tail = newNode;
     this.length++;
     return this;
   }
   prepend(value) {
+    // const newNode = new Node(value);
     const newNode = {
       value: value,
       next: this.head,
