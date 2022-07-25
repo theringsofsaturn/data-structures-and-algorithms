@@ -18,23 +18,22 @@
 // each element of array P is an integer within the range [1..9];
 // every friend had a seat in the car they came in; that is, P[K] < S[K] for each K within the range [0.. N-1].
 
-
 function solution(P, S) {
-  var cars = [];
-  for (var i = 0; i < P.length; i++) {
+  let cars = [];
+  for (let i = 0; i < P.length; i++) {
     if (cars[P[i]] === undefined) {
       cars[P[i]] = [];
     }
     cars[P[i]].push(S[i]);
   }
-  var car = 0;
-  var passengers = 0;
-  var max = 0;
-  for (var i = 0; i < cars.length; i++) {
+  let car = 0;
+  let passengers = 0;
+  let max = 0;
+  for (let i = 0; i < cars.length; i++) {
     if (cars[i] !== undefined) {
       car++;
       passengers = 0;
-      for (var j = 0; j < cars[i].length; j++) {
+      for (let j = 0; j < cars[i].length; j++) {
         passengers += cars[i][j];
       }
       if (passengers > max) {

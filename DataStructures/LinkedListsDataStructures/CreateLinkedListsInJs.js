@@ -93,6 +93,23 @@ class LinkedList {
     return this;
   }
 
+  reverse() {
+    if (!this.head.next) {
+      return this;
+    }
+    let currentNode = this.head;
+    let nextNode = null;
+    let previousNode = null;
+    while (currentNode !== null) {
+      nextNode = currentNode.next;
+      currentNode.next = previousNode;
+      previousNode = currentNode;
+      currentNode = nextNode;
+    }
+    this.head = previousNode;
+    return this;
+  }
+
   printList() {
     const array = [];
     let currentNode = this.head;
@@ -105,9 +122,10 @@ class LinkedList {
 }
 
 const myLinkedList = new LinkedList(10);
-console.log(myLinkedList.append(5));
-console.log(myLinkedList.append(15));
-console.log(myLinkedList.prepend(20));
-console.log(myLinkedList.insert(2, 30));
-console.log(myLinkedList.remove(2));
-console.log(myLinkedList.printList());
+// console.log(myLinkedList.append(5));
+// console.log(myLinkedList.append(15));
+// console.log(myLinkedList.prepend(20));
+// console.log(myLinkedList.insert(2, 30));
+// console.log(myLinkedList.remove(2));
+// console.log(myLinkedList.printList());
+console.log(myLinkedList.reverse());
