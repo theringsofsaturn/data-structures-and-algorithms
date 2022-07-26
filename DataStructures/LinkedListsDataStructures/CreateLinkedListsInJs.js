@@ -97,17 +97,14 @@ class LinkedList {
     if (!this.head.next) {
       return this;
     }
-    let currentNode = this.head;
-    let nextNode = null;
-    let previousNode = null;
-    while (currentNode !== null) {
-      nextNode = currentNode.next;
-      currentNode.next = previousNode;
-      previousNode = currentNode;
-      currentNode = nextNode;
+    let first = this.head;
+    let second = first.next;
+    while (second) {
+      const temp = second.next;
+      second.next = first;
+      first = second;
+      second = temp;
     }
-    this.head = previousNode;
-    return this;
   }
 
   printList() {
