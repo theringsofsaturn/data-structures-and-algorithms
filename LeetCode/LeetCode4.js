@@ -15,7 +15,6 @@
 // Input: nums1 = [1,2], nums2 = [3,4]
 // Output: 2.50000
 // Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
- 
 
 // Constraints:
 
@@ -26,5 +25,12 @@
 // 1 <= m + n <= 2000
 // -106 <= nums1[i], nums2[i] <= 106
 
-const findMedianSortedArrays = (nums1, nums2) => {
-    
+function findMedianSortedArrays(nums1, nums2) {
+  const mergedArray = [...nums1, ...nums2].sort((a, b) => a - b);
+  const mid = Math.floor(mergedArray.length / 2);
+  if (mergedArray.length % 2 === 0) {
+    return (mergedArray[mid - 1] + mergedArray[mid]) / 2;
+  } else {
+    return mergedArray[mid];
+  }
+}
