@@ -41,11 +41,16 @@ class Stack {
     if (this.length === 0) {
       return null;
     }
+    if (this.length === 1) {
+      this.top = null;
+      this.bottom = null;
+    }
     // if stack has one element
-    let poppedNode = this.top; // set poppedNode to top
+    // let poppedNode = this.top; // set poppedNode to top
     this.top = this.top.next; // set top to top's next
     this.length--; // decrement length
-    return poppedNode;
+    // return poppedNode; // Not to let the poppedNode be garbage collected
+    return this;
   }
 
   isEmpty() {
