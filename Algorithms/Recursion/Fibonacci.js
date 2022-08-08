@@ -26,7 +26,7 @@ for (let i = 0; i <= 15 + 1; i++) {
 console.log("Fibonacci sequence: ", fibonacciArray);
 console.log("Recursive solution: ", findIndexValueOfFibonacciRecursive(6));
 
-// Iterative solution improved
+// Iterative solution
 function findIndexValueOfFibonacciIterative(n) {
   let fibonacciArray = [0, 1];
   for (let i = 2; i <= n; i++) {
@@ -35,7 +35,4 @@ function findIndexValueOfFibonacciIterative(n) {
   return fibonacciArray[n];
 }
 
-console.log(
-  "Iterative solution improved: ",
-  findIndexValueOfFibonacciIterative(6)
-);
+console.log("Iterative solution: ", findIndexValueOfFibonacciIterative(6));
