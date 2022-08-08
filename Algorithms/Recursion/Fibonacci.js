@@ -36,3 +36,7 @@ function findIndexValueOfFibonacciIterative(n) {
 }
 
 console.log("Iterative solution: ", findIndexValueOfFibonacciIterative(6));
+
+//* Big O complexity for interative solution is O(n) - linear
+//* Big O complexity for recursive solution is O(2^n) - exponential
+//! exponential is very bad, even worse than two nested loops O(n^2)
