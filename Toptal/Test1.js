@@ -1,4 +1,4 @@
-// Codility Toptal task 1
+// Toptal task 1
 // Crop a message to the maximum length of K characters. If the message is shorter than K characters, return the original message. If the message is longer than K characters, return the first K characters of the message.
 //
 // Examples:
