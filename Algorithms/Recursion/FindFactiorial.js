@@ -2,10 +2,21 @@
 
 function findFactorialIterative(num) {
   let factorial = 1;
+
   for (let i = 1; i <= num; i++) {
     factorial *= i;
+    // console.log(factorial);
   }
   return factorial;
 }
 
 console.log(findFactorialIterative(5)); // 120
+
+function findFactorialRecursive(num) {
+  if (num === 1) {
+    return 1;
+  }
+  return num * findFactorialRecursive(num - 1);
+}
+
+console.log(findFactorialRecursive(5)); // 120
