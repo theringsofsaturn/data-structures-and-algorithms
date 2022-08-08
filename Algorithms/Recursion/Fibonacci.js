@@ -2,25 +2,8 @@
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, …
 // The pattern of the sequence is that each value is the sum of the 2 previous values, that means that for N=5 → 2+3
 
-// Iterative solution
+// First solution - recursive & loop
 let fibonacciArray = []; // or we can initialize the array with [0, 1], then the condition if(n < 2) => return n.
-let fibonacci = (n) => {
-  if (n === 0) {
-    return 0;
-  } else if (n === 1) {
-    return 1;
-  } else {
-    return fibonacci(n - 1) + fibonacci(n - 2);
-  }
-};
-
-for (let i = 0; i <= 15 + 1; i++) {
-  fibonacciArray.push(fibonacci(i));
-}
-
-console.log("Fibonacci sequence", fibonacciArray);
-console.log("Iterative solution: ", fibonacci(7));
-
 // Recursive solution
 function findIndexValueOfFibonacciRecursive(n) {
   if (n === 0) {
@@ -35,4 +18,21 @@ function findIndexValueOfFibonacciRecursive(n) {
   }
 }
 
+// Fill the array with 15 Fibonacci numbers
+for (let i = 0; i <= 15 + 1; i++) {
+  fibonacciArray.push(findIndexValueOfFibonacciRecursive(i));
+}
+
+console.log("Fibonacci sequence: ", fibonacciArray);
 console.log("Recursive solution: ", findIndexValueOfFibonacciRecursive(6));
+
+// Iterative solution improved
+function loopFibonacci(n) {
+  let fibonacciArray = [0, 1];
+  for (let i = 2; i <= n; i++) {
+    fibonacciArray.push(fibonacciArray[i - 1] + fibonacciArray[i - 2]);
+  }
+  return fibonacciArray[n];
+}
+
+console.log("Iterative solution improved: ", loopFibonacci(6));
