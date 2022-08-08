@@ -27,15 +27,15 @@ console.log("Fibonacci sequence: ", fibonacciArray);
 console.log("Recursive solution: ", findIndexValueOfFibonacciRecursive(6));
 
 // Iterative solution improved
-function loopFibonacci(n) {
-  let findIndexValueOfFibonacciIterative = [0, 1];
+function findIndexValueOfFibonacciIterative(n) {
+  let fibonacciArray = [0, 1];
   for (let i = 2; i <= n; i++) {
-    findIndexValueOfFibonacciIterative.push(
-      findIndexValueOfFibonacciIterative[i - 1] +
-        findIndexValueOfFibonacciIterative[i - 2]
-    );
+    fibonacciArray.push(fibonacciArray[i - 1] + fibonacciArray[i - 2]);
   }
-  return findIndexValueOfFibonacciIterative[n];
+  return fibonacciArray[n];
 }
 
-console.log("Iterative solution improved: ", loopFibonacci(6));
+console.log(
+  "Iterative solution improved: ",
+  findIndexValueOfFibonacciIterative(6)
+);
