@@ -28,11 +28,14 @@ console.log("Recursive solution: ", findIndexValueOfFibonacciRecursive(6));
 
 // Iterative solution improved
 function loopFibonacci(n) {
-  let fibonacciArray = [0, 1];
+  let findIndexValueOfFibonacciIterative = [0, 1];
   for (let i = 2; i <= n; i++) {
-    fibonacciArray.push(fibonacciArray[i - 1] + fibonacciArray[i - 2]);
+    findIndexValueOfFibonacciIterative.push(
+      findIndexValueOfFibonacciIterative[i - 1] +
+        findIndexValueOfFibonacciIterative[i - 2]
+    );
   }
-  return fibonacciArray[n];
+  return findIndexValueOfFibonacciIterative[n];
 }
 
 console.log("Iterative solution improved: ", loopFibonacci(6));
