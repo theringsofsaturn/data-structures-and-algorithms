@@ -18,3 +18,18 @@ for (let i = 0; i <= 15; i++) {
 }
 console.log(fibonacciArray);
 console.log(fibonacci(7));
+
+function findIndexValueOfFibonacciSequence(n) {
+  if (n === 0) {
+    return 0;
+  } else if (n === 1) {
+    return 1;
+  } else {
+    return (
+      findIndexValueOfFibonacciSequence(n - 1) +
+      findIndexValueOfFibonacciSequence(n - 2)
+    );
+  }
+}
+
+console.log(findIndexValueOfFibonacciSequence(6));
