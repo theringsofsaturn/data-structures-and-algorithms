@@ -23,6 +23,27 @@ class BinarySearchTree {
     }
   }
 
+  remove(value, parentNode) {
+    if (value < this.value) {
+      if (this.left) {
+        this.left.remove(value, this);
+      }
+    } else if (value > this.value) {
+      if (this.right) {
+        this.right.remove(value, this);
+      }
+    } else {
+      if (this.left && this.right) {
+        this.value = this.right.getMinValue();
+        this.right.remove(this.value, this);
+      } else if (parentNode.left === this) {
+        parentNode.left = this.left || this.right;
+      } else if (parentNode.right === this) {
+        parentNode.right = this.left || this.right;
+      }
+    }
+  }
+
   contains(value) {
     if (value === this.value) {
       return true;
