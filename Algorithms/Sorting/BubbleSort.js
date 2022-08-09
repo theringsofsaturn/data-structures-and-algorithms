@@ -15,7 +15,7 @@ function bubbleSort(array) {
       }
     }
   }
+  return array;
 }
 
-bubbleSort(numbers);
-console.log(numbers);
+console.log(bubbleSort(numbers)); // [1, 2, 2, 8, 23, 37, 65, 134, 208]
