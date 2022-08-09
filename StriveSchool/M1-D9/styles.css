@@ -1,0 +1,55 @@
+body {
+    background: #000000;
+    display: flex;
+    height: 100vh;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1, p {
+  font-family: 'Helvetica', sans-serif; 
+  font-size: 50px;
+  font-weight: 800;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px;
+  color: rgb(255, 255, 255);
+  }
+  .box { 
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  color: white;
+  }
+  #container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  }
+  
+  #cells {
+  margin: 0 auto;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  display: flex;
+  width: 50%;
+  } 
+  #cells div{
+  border: 1px solid rgb(122, 41, 41);
+  
+  }
+  #sort{ 
+  margin: 50px auto;
+  width: 100px;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  
+  }
+  
+  #bingo {
+  margin: 0 auto;
+  }

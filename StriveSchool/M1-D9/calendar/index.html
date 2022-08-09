@@ -1,0 +1,239 @@
+  
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Day 7 -  Calculator </title>
+        <style>
+          body {
+              background-color: #090214;
+          }
+
+          #calculator {
+              height: 100vh;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+          }
+
+        input[type=button] {
+            font-size: 30px;
+            width:50px;
+            height:50px;
+        }
+
+        #result {
+            font-size:50px;
+            text-align:right;
+            width:100%;
+            max-width:261px;
+            border-radius: 10px;;
+            background-color: rgb(205, 245, 182);
+
+        }
+
+        .numericButton {
+            color:rgb(18, 85, 5);
+            background-color:rgba(130, 170, 125, 0.911);
+            border-radius:15px;
+            border-color:rgb(88, 131, 88);
+        }
+
+        .functionButton {
+            color:rgb(123, 128, 124);
+            background-color: rgb(54, 4, 25);
+            border-radius: 10px;
+            border-color:rgb(103, 90, 133);
+        }
+
+        </style>
+    </head>
+
+<body>
+  <div id="calculator">
+    <table>
+       <tr>
+           <td colspan="5">
+               <input type="text" id="result" value="0" disabled />
+           </td>
+       </tr>
+
+       <tr>
+           <td><input type="button" class="numericButton" value="7" /></td>
+           <td><input type="button" class="numericButton" value="8" /></td>
+           <td><input type="button" class="numericButton" value="9" /></td>
+           <td><input type="button" class="functionButton" value="*" /></td>
+           <td><input type="button" class="functionButton" value="√" /></td>
+       </tr>
+
+       <tr>
+        <td><input type="button" class="numericButton" value="4" /></td>
+        <td><input type="button" class="numericButton" value="5" /></td>
+        <td><input type="button" class="numericButton" value="6" /></td>
+        <td><input type="button" class="functionButton" value="-" /></td>
+        <td><input type="button" class="functionButton" value="n!" /></td>
+    </tr>
+
+    <tr>
+        <td><input type="button" class="numericButton" value="1" /></td>
+        <td><input type="button" class="numericButton" value="2" /></td>
+        <td><input type="button" class="numericButton" value="3" /></td>
+        <td><input type="button" class="functionButton" value="+" /></td>
+        <td><input type="button" class="functionButton" value="p" /></td>
+    </tr>
+
+    <tr>
+        <td><input type="button" class="functionButton" value="C" /></td>
+        <td><input type="button" class="numericButton" value="0" /></td>
+        <td><input type="button" class="functionButton" value="/" /></td>
+        <td><input type="button" class="functionButton" value="=" /></td>
+        <td><input type="button" class="functionButton" value="." /></td>
+    </tr>
+
+
+    </table>
+ </div> 
+
+ <script>
+     window.addEventListener('DOMContentLoaded', function() {
+         console.log("Dom Loaded");
+           // Memory of our calculator
+             let operation = "";
+             let previousResult = 0; //First Oper   
+     
+              
+            //funksioni per shumen
+              const sum = function(x,y) { // const sum=(x,y)=>  
+               return x + y;
+               }
+              
+            // funksioni per zbritjen:
+               const diff = function(x,y) {
+                 return x - y;
+                }
+            // funksioni per shumzimin:
+               const mul = function(x,y) {
+             return x * y;
+               }
+       
+         const div = function(x,y) {
+             return x / y;
+             }
+         
+         // Funksioni per Fuqine
+         // const pow = (x,y) =>Math.pow(x,y) <-- Easy version
+           const power = (base, exponent) => {
+               let result =1 ;
+               for(let count = 0; count<exponent; count++){
+                   result *= base
+               }
+               return result;
+           }
+       
+       // Factorial rescursive version
+         const factorial = n => {
+             if (n <= 0 || n === 1 ) {
+                return 1;
+              } else return ( n * factorial(n - 1));
+             }
+
+        // Funksioni i rrenjes katrore
+        const squareRoot = x => Math.sqrt(x)   
+
+        // decimal function '.'
+        const inputDecimal = x => !x.includes('.') ? `${x}.`:`${x}`
+
+        // kur shtypim numrat
+        const numericButtonPressed = function (event) {
+        const numberPressed = event.target.value
+        console.log(numberPressed)
+
+          const result = document.getElementById('result')
+            if(result.value=='0'){ 
+            result.value=numberPressed
+              } else {
+                     result.value = result.value + numberPressed;//concatinating the numbers - bashkim i numrave
+                     }
+            }
+
+        // kur shtypim = - * / C = etj
+        const functionButtonPressed = function (event) {
+        const keyPressed = event.target.value;
+        console.log(keyPressed);
+        const result = document.getElementById('result');
+
+            switch(keyPressed) {
+             case '=': //compute and display the result
+                
+                 switch (operation){ // switch between: + - * /
+                    case '+':
+                    // fist operand + second operand
+                    result.value = sum(previousResult, parseFloat(result.value));
+                    // result.value = parseFloat(previousResult) + parseFloat(result.value);
+                        break;
+                    
+                    case '-':
+                    result.value = diff(previousResult, parseFloat(result.value));
+                        break;
+
+                    case '*': 
+                    result.value = mul(previousResult, parseFloat(result.value));
+                         break;
+
+                    case '/': 
+                    result.value = div(previousResult, parseFloat(result.value));
+                        break;
+
+                    case 'p': 
+                    result.value = power(previousResult, parseFloat(result.value));
+                        break;
+                    
+                    case '√': 
+                    result.value = squareRoot(result.value);
+                        break;
+
+                    case 'n!':
+                    result.value = factorial(result.value);
+                         break;
+
+                    default: 
+                    console.log('Default Case!');
+                    }
+                     break;
+
+                case 'C': // reseting everything
+                console.log("I'm the C button!")
+                result.value="0"
+                previousResult = 0;
+                    break;
+                            
+                case '.': 
+                result.value = inputDecimal(result.value)
+                    break;
+
+                default:
+                previousResult = parseFloat(result.value);//saving first operand
+                operation = keyPressed;//saving operation
+                result.value = ""; // reset to null to let user type second operand    
+                         }  
+                     }
+
+                    const numericButtons = document.getElementsByClassName("numericButton");
+                        //console.log(numericButtons);
+                    
+                    const functionButtons = document.getElementsByClassName("functionButton");
+                           //console.log(functionButtons)
+
+                    for(let button of numericButtons) {
+                        button.addEventListener('click', numericButtonPressed)
+                    }
+
+                    for(let button of functionButtons) {
+                        button.addEventListener('click', functionButtonPressed)
+                    }
+       });
+
+
+ </script>
+
+</body>
+</html>
