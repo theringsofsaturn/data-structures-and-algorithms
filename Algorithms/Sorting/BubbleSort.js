@@ -1,4 +1,4 @@
-//* Bubble sorting is usually the most simpler but not the most efficient way to sort. Its average and worst case performance is O(n^2). With a space complexity of O(1).
+//* Bubble sorting is usually the most simple but not the most efficient way to sort. Its average and worst case performance is O(n^2). With a space complexity of O(1).
 
 // Bubble sort example algorithm
 
