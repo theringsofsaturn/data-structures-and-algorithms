@@ -1,8 +1,8 @@
 class Node {
   constructor(value) {
-    this.left = null;
-    this.right = null;
-    this.value = value;
+    this.left = null; // left child
+    this.right = null; // right child
+    this.value = value; // value of the node
   }
 }
 
@@ -129,19 +129,22 @@ class BinarySearchTree {
     }
   }
   BreadthFirstSearch() {
-    let currentNode = this.root;
-    let list = [];
-    let queue = [];
-    queue.push(currentNode);
+    let currentNode = this.root; // the root is the first node
+    let list = []; // the list is to store the nodes in the order of the traversal
+    let queue = []; // queue is needed to keep track of the nodes that are visited
+    queue.push(currentNode); // initially, push the root node to the queue
 
     while (queue.length > 0) {
-      currentNode = queue.shift();
-      list.push(currentNode.value);
+      // while there is something in the queue
+      currentNode = queue.shift(); // remove the first item from the queue and assign it to currentNode
+      list.push(currentNode.value); // add the value of the currentNode to the list
       if (currentNode.left) {
-        queue.push(currentNode.left);
+        // if the currentNode has a left child,
+        queue.push(currentNode.left); // add it to the queue
       }
       if (currentNode.right) {
-        queue.push(currentNode.right);
+        // if the currentNode has a right child,
+        queue.push(currentNode.right); // add it to the queue
       }
     }
     return list;
