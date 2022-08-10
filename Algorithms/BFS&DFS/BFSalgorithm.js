@@ -129,6 +129,10 @@ class BinarySearchTree {
     }
   }
   BreadthFirstSearch() {
+    //      9
+    //   4     20
+    // 1  6  15  170
+
     let currentNode = this.root; // the root is the first node
     let list = []; // the list is to store the nodes in the order of the traversal
     let queue = []; // queue is needed to keep track of the nodes that are visited
@@ -161,10 +165,6 @@ tree.insert(15);
 tree.insert(1);
 
 console.log("BFS", tree.BreadthFirstSearch());
-
-//     9
-//  4     20
-//1  6  15  170
 
 function traverse(node) {
   const tree = { value: node.value };
