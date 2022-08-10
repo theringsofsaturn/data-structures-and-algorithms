@@ -1,4 +1,4 @@
-// Merge sort is a great algorithm to use because it gets Big O complexity of O(n log n).
+// Merge sort is a "divide & conquer" algorithm, and it is a great algorithm to use because it gets Big O complexity of O(n log n).
 
 // Merge sort algorithm example
 
