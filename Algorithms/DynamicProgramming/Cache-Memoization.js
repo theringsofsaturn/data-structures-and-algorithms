@@ -1,3 +1,5 @@
+// Memoization is a specific form of caching that involves caching the returned value. The returned value of the function Memoized below, based on its parameters. If the parameter of this function doesn't change, like in the example below, then it is memoized, it uses the chache. Memoization is a way to rememember a solution so, that you don't have to compute it again.
+
 function add80(n) {
   return n + 80;
 }
