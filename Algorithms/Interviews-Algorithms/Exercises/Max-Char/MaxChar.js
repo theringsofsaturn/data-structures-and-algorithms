@@ -47,7 +47,7 @@
 
 const string = "Hello There!";
 
-function char(string) {
+function charExample(string) {
   const chars = {};
 
   // For every character that we found and iterate over, we'll add a property to chars object.
@@ -64,11 +64,11 @@ function char(string) {
   return chars;
 }
 
-console.log("Function 1: ", char(string));
+console.log("Function 1: ", charExample(string));
 
 // Another clean code example:
 
-function char2(string) {
+function charExample2(string) {
   const chars = {};
   // Without logical operator it will return null because there's no char property the first time we go through the object. So we add || 1:
   // If this is false, then assign 1 to char
@@ -79,4 +79,33 @@ function char2(string) {
   return chars;
 }
 
-console.log("Function 2", char2(string));
+console.log("Function 2", charExample2(string));
+
+// The final algorithm solution to the initial problem:
+// Given a string, return the character that is most
+// commonly used in the string.
+
+function maxChar(string) {
+  const charObj = {};
+  let max = 0;
+  let maxChar = "";
+
+  for (const char of string) {
+    if (charObj[char]) {
+      charObj[char]++;
+    } else {
+      charObj[char] = 1;
+    }
+  }
+
+  // To iterate through the object, we'll use for...in loop.
+  for (const char in charObj) {
+    if (charObj[char] > max) {
+      max = charObj[char];
+      maxChar = char;
+    }
+  }
+  return maxChar;
+}
+
+console.log("Final solution: ", maxChar("abcccccccd"));
