@@ -17,9 +17,9 @@ function chunk(array, size) {
 
     if (!last || last.length === size) {
       // If last element doesn't exist, or if its length is equal to chunk size
-      chunked.push([i]);
+      chunked.push([i]); // create a new chunk to "chunked" with the current element to that
     } else {
-      last.push(i);
+      last.push(i); // add the current element into the chunk
     }
   }
   return chunked;
