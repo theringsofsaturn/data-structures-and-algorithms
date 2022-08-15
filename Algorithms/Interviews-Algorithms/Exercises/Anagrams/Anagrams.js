@@ -14,6 +14,9 @@ function anagrams(stringA, stringB) {
   // 1. Convert the strings to lowercase.
   stringA = stringA.toLowerCase();
   stringB = stringB.toLowerCase();
+  stringA.replace(/[^\w]/g, "");
+  stringB.replace(/[^\w]/g, "");
+
   // 2. Create an empty object to store the characters of the first string.
   let objA = {};
   // 3. Create an empty object to store the characters of the second string.
@@ -50,3 +53,19 @@ function anagrams(stringA, stringB) {
 }
 
 console.log(anagrams("rail safety", "fairy tales"));
+console.log(anagrams("RAIL! SAFETY!", "fairy tales"));
+console.log(anagrams("Hi there", "Bye there"));
+
+// Solution 2:
+
+function anagrams2(stringA, stringB) {
+  return cleanString(stringA) === cleanString(stringB);
+}
+
+function cleanString(string) {
+  return string.replace(/[^\w]/g, "").toLowerCase().split("").sort().join("");
+}
+
+console.log(anagrams2("rail safety", "fairy tales"));
+console.log(anagrams2("RAIL! SAFETY!", "fairy tales"));
+console.log(anagrams2("Hi there", "Bye there"));
