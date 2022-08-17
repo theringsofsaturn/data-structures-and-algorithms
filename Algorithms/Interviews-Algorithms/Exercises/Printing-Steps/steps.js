@@ -18,8 +18,8 @@
 //       '####'
 
 // Solution:
-// i is row and j is column
 
+// i is row and j is column
 function steps(n) {
   for (let i = 0; i < n; i++) {
     let step = "";
@@ -34,3 +34,24 @@ function steps(n) {
   }
 }
 
+steps(4);
+
+// Recursive solution:
+
+function steps2(n, row = 0, stair = "") {
+  if (n === row) {
+    return;
+  }
+  if (n === stair.length) {
+    console.log(stair);
+    return steps2(n, row + 1);
+  }
+  if (stair.length <= row) {
+    stair += "#";
+  } else {
+    stair += " ";
+  }
+  steps2(n, row, stair);
+}
+
+steps2(4);
