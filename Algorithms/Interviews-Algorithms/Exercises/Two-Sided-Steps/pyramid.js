@@ -14,7 +14,7 @@
 //       ' ### '
 //       '#####'
 
-// Solution
+// Solution 1. Iterative
 
 function pyramid(n) {
   const midpoint = Math.floor((2 * n - 1) / 2);
@@ -34,3 +34,27 @@ function pyramid(n) {
 }
 
 pyramid(3);
+
+// Solution 2. Recursive
+
+function pyramid2(n, row = 0, level = "") {
+  if (row === n) {
+    return;
+  }
+
+  if (level.length === 2 * n - 1) {
+    console.log(level);
+    return pyramid2(n, row + 1);
+  }
+
+  const midpoint = Math.floor((2 * n - 1) / 2);
+  let add;
+  if (midpoint - row <= level.length && midpoint + row >= level.length) {
+    add = "#";
+  } else {
+    add = " ";
+  }
+  pyramid2(n, row, level + add);
+}
+
+pyramid2(3);
