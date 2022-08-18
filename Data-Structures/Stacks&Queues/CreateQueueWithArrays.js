@@ -13,6 +13,14 @@ class Queue {
     return this.items.shift();
   }
 
+  add(item) {
+    this.item.unshift(item);
+  }
+
+  remove() { 
+    return this.item.pop();
+  }
+
   peek() {
     return this.items[0];
   }
