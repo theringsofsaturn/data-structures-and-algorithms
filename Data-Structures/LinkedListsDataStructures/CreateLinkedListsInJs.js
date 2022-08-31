@@ -1,8 +1,20 @@
-// What is a linked list?
+// What is a Linked List?
 
-// A linked list is a data structure that consists of nodes that contain data and pointers to the next node in the list. (pointer to another node or null if there is no next node)
+// A Linked List is a data structure that consists of nodes that contain data and pointers to the next node in the list. (pointer to another node or null if there is no next node)
 // It contains a *head*, a *tail* and a length property.
 // Each node is only connected unidirectionally to the next node. (The Double Linked List has a connection poiting back to the previous node).
+
+// Linked Lists vs Arrays
+// Lists:
+// do not have indexes.
+// connected via nodes with a *next* pointer.
+// Random access is not allowed (we can't ask for an item at a specific index and get it immediately. We have to traverse from the beginning to the index of that item).
+// They are very good at insertion and deletion! (The main reason we would want to work with a Linked List is for insertion or deletion)
+
+// Arrays:
+// Indexed and in order.
+// Insertion and deletion can be expensive.
+// Can quickly be accessed at a specific index.
 
 // Take a look at this interactive example of single linked list with animations: https://visualgo.net/en/list?slide=2-5
 
