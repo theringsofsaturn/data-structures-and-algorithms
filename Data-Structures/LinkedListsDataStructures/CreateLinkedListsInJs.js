@@ -1,3 +1,11 @@
+// What is a linked list?
+
+// A linked list is a data structure that consists of nodes that contain data and pointers to the next node in the list. (pointer to another node or null if there is no next node)
+// It contains a *head*, a *tail* and a length property.
+// Each node is only connected unidirectionally to the next node. (The Double Linked List has a connection poiting back to the previous node).
+
+// Take a look at this interactive example of single linked list with animations: https://visualgo.net/en/list?slide=2-5
+
 // Create a Linked List in JavaScript
 // Linked List: 10 --> 5 --> 15
 

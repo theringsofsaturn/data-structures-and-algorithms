@@ -29,7 +29,7 @@ So, think about what sort of operations you are going to do and what your priori
 
 # Queues
 
-Lets had we have a queue. We create a waitlist app.
+Lets say we have a queue. We create a waitlist app.
 
 The first person that shows up is Emilian. Then John shows up. Then David. Then Anna.
 

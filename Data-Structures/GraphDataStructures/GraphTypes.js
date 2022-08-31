@@ -8,7 +8,7 @@ const graph = [
 
 // Adjacent List
 
-const graph2 = [[2], [2, 3], [0, 1, 3]]; // The index of the array ia the actual value of the node in the graph.
+const graph2 = [[2], [2, 3], [0, 1, 3]]; // The index of the array is the actual value of the node in the graph.
 // [2] => the index 0 (node value of 0), is connected to 2.
 // the index 1 is connected to 2 and 3.
 // [0, 1, 3] => the index 2 is connected to 0, 1 and 3.
@@ -20,6 +20,3 @@ const graph3 = [
   [0, 0, 1, 1], // array index 1 is connected to 2 and 3 (third & fourth index is 1 = "yes ")
   [0, 1, 1, 0], // array index 2 is connected to 1 and 2 (second and third index is 1 = "yes ")
 ];
-
-
-// if a factory pro
